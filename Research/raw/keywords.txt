@@ -1,0 +1,75 @@
+keywords_list = [
+
+    "Inner Peace", "mindfulness", "tranquility", "serenity", "calmness", "harmony", "meditation", "balance",
+
+    "self-awareness", "stillness", "contentment", "equanimity", "clarity", "inner calm", "quietude", "grounding",
+
+    "self-acceptance", "compassion", "patience", "gentleness", "forgiveness", "flow state", "detachment", "presence",
+
+    "simplicity", "surrender", "introspection", "resilience", "positivity", "non-judgment", "mental clarity", "gratitude",
+
+    "acceptance", "open-mindedness", "freedom", "joy", "inner strength", "self-love", "solitude", "ease", "unity",
+
+    "Healing", "recovery", "rejuvenation", "restoration", "renewal", "therapy", "catharsis", "emotional release",
+
+    "well-being", "holistic", "detox", "revitalization", "energy healing", "chakra alignment", "Reiki", "natural remedies",
+
+    "self-care", "empowerment", "self-growth", "transformation", "revitalized", "soul healing", "spiritual growth",
+
+    "self-healing", "overcoming trauma", "emotional balance", "purification", "mindfulness practice", "therapeutic",
+
+    "vitality", "self-recovery", "inner transformation", "positivity practices", "affirmations", "wellness", "release",
+
+    "nurturing", "rebalancing", "detoxification", "life energy", "vitality boost", "Spiritual", "enlightenment", "divinity",
+
+    "awakening", "higher self", "soul journey", "transcendence", "mysticism", "sacredness", "divine connection",
+
+    "spiritual growth", "prayer", "oneness", "sacred practices", "soul connection", "divine energy", "faith", "cosmic energy",
+
+    "universal consciousness", "spiritual alignment", "spirit guide", "meditation retreat", "spirituality", "soul purpose",
+
+    "inner light", "spiritual awakening", "higher consciousness", "divine love", "sacred path", "self-realization",
+
+    "cosmic harmony", "ascension", "spiritual balance", "mindfulness meditation", "connection with nature", "inner wisdom",
+
+    "aura cleansing", "spiritual practices", "divine guidance", "soul alignment", "angelic presence", "Fresh", "renewal",
+
+    "rebirth", "invigorating", "uplifting", "pure", "crisp", "refreshing", "clean", "new beginnings", "breath of fresh air",
+
+    "revitalized", "blooming", "natural", "revitalization", "dew-kissed", "sparkling", "rejuvenating", "invigorated",
+
+    "freshly picked", "alive", "renewal of spirit", "vibrant", "flourishing", "green", "pristine", "refreshing breeze",
+
+    "unspoiled", "nature-inspired", "zest", "bright", "radiant", "newness", "cool breeze", "fragrant", "lively",
+
+    "flourishing life", "untainted", "fresh perspective", "renewed energy", "bright outlook", "Combining Themes",
+
+    "mindful breathing", "healing energy", "spiritual freshness", "inner harmony", "revitalized spirit", "soulful renewal",
+
+    "fresh mindset", "awakened clarity", "spiritual tranquility", "healing mindfulness", "enlightened freshness",
+
+    "self-growth and balance", "uplifting serenity", "spiritual healing practices", "tranquil rejuvenation",
+
+    "fresh perspective on life", "holistic restoration", "awakened stillness", "revitalized clarity",
+
+    "nature-inspired mindfulness", "Additional Keywords", "soul care", "spiritual wellness", "self-empowerment",
+
+    "personal growth", "peace of mind", "aura healing", "mindfulness journey", "quiet retreat", "self-discovery",
+
+    "mental peace", "light within", "heart-centered", "fresh approach", "self-reflection", "meditative calm",
+
+    "fresh opportunities", "peaceful mindset", "gratitude practices", "energy restoration", "spiritual cleansing"
+
+]
+
+trauma, stress, darkness, loneliness
+
+scraping-params
+{
+    posts,date,upvotes/like, equivalent, solutions if any, 
+}
+
+Platforms
+{
+    Reddit, Quora, Youtube,  Twitter
+}
