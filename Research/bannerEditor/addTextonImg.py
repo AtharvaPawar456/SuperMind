@@ -1,0 +1,63 @@
+from PIL import Image, ImageDraw, ImageFont
+import random
+import os
+from typing import List
+
+def placeTextOnImage(imagePath: str, text: str, fontSize: int = 60) -> None:
+    try:
+        # Load the image
+        img = Image.open(imagePath)
+        draw = ImageDraw.Draw(img)
+
+        # Specify the folder containing fonts
+        fontFolder = "fonts"
+
+        # Get a list of all .ttf files in the folder
+        fontList: List[str] = [
+            os.path.join(fontFolder, fontFile) 
+            for fontFile in os.listdir(fontFolder) 
+            if fontFile.endswith(".ttf")
+        ]
+
+        if not fontList:
+            raise FileNotFoundError(f"No .ttf fonts found in the folder: {fontFolder}")
+
+        # Select a random font
+        randomFont = random.choice(fontList)
+
+        # Load the font
+        try:
+            font = ImageFont.truetype(randomFont, fontSize)
+        except IOError:
+            print(f"Font '{randomFont}' not found or invalid. Using default font.")
+            font = ImageFont.load_default()
+
+        # Get text size
+        textWidth, textHeight = draw.textsize(text, font=font)
+
+        # Calculate position for centered text
+        imgWidth, imgHeight = img.size
+        position = ((imgWidth - textWidth) // 2, (imgHeight - textHeight) // 2)
+
+        # Draw text
+        draw.text(position, text, fill="black", font=font)
+        
+        imagePathClean = imagePath.replace("\\", "_")
+        imagePathClean = imagePathClean.replace(".png", "")
+        imagePathClean = imagePathClean.replace(".jpg", "")
+
+        # Save the updated image with the same quality
+        outputPath = f"{imagePathClean}.png"
+        img.save(outputPath, quality=95)  # Quality set to 95 (close to the original)
+        print(f"Text added and image saved to {outputPath} with original quality.")
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+
+
+# Usage
+placeTextOnImage("banners\\1.png", "Calm, Heal, Happy")
+placeTextOnImage("banners\\2.png", "Calm, Heal, Happy")
+placeTextOnImage("banners\\3.png", "Calm, Heal, Happy")
+placeTextOnImage("banners\\4.png", "Calm, Heal, Happy")
