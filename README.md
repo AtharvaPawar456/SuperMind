@@ -4,7 +4,11 @@
 
 **Team Name:** GTA  
 **Project Name:** Adzooop 
+
 **Project Demo Live Link:** [Adzooop](https://doberman-natural-lioness.ngrok-free.app) 
+
+
+**PPT Link:** [PPT](https://www.canva.com/design/DAGcl1mhf8o/uYIiz-mwdKhKl7JMOq0GKA/edit) 
 
 
 ## 📌 Project Overview

@@ -56,7 +56,7 @@ def oldplaceTextOnImage(imagePath: str, text: str, fontSize: int = 60) -> None:
 
 
 
-def placeTextOnImage(imagePath: str, text: str, cts: str, fontSize: int = 60) -> None:
+def placeTextOnImage(imagePath: str, text: str, cts: str, fontSize: int = 20) -> None:
     """
     Places two lines of text over an image. The first line (text) is centered horizontally and vertically.
     The second line (cts) is placed below the first line, at half the font size, with a 10-pixel gap.
@@ -130,7 +130,9 @@ def placeTextOnImage(imagePath: str, text: str, cts: str, fontSize: int = 60) ->
 # Usage
 # placeTextOnImage("banners\\1.png", "Calm, Heal, Happy")
 
-placeTextOnImage("banners\\1.png", "Calm, Heal, Happy", "Stay Positive, Keep Growing")
-placeTextOnImage("banners\\2.png", "Calm, Heal, Happy", "Stay Positive, Keep Growing")
-placeTextOnImage("banners\\3.png", "Calm, Heal, Happy", "Stay Positive, Keep Growing")
-placeTextOnImage("banners\\4.png", "Calm, Heal, Happy", "Stay Positive, Keep Growing")
+title = "Feeling overwhelmed at work? Find calm amidst the chaos with just a few minutes a day"
+cta = "Start your free trial today"
+placeTextOnImage("banners\\1.png", title, cta)
+placeTextOnImage("banners\\2.png", title, cta)
+placeTextOnImage("banners\\3.png", title, cta)
+placeTextOnImage("banners\\4.png", title, cta)
