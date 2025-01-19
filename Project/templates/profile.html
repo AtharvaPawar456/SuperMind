@@ -1,0 +1,383 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="grid grid-cols-12 gap-x-4">
+    <!-- Start Intro -->
+    <div class="col-span-full 2xl:col-span-7 card p-0">
+        <div class="grid grid-cols-12 px-5 sm:px-12 py-11 relative overflow-hidden h-full">
+            <div class="col-span-full md:col-span-7 self-center inline-flex flex-col 2xl:block">
+                <p class="!leading-none text-sm lg:text-base text-gray-900 dark:text-dark-text">
+                    Today is <span class="today">Thursday, 25 Jul 2024</span>
+                </p>
+                <h1 class="text-4xl xl:text-[42px] leading-[1.23] font-semibold mt-3">
+                    <span class="flex-center justify-start">
+                        <span class="shrink-0">Welcome Back.</span>
+                        <span class="select-none hidden md:inline-block animate-hand-wave origin-[70%_70%]">👋</span></br>
+                    </span>
+                    Alex Jionsion
+                </h1>
+                <a href="#" class="btna b-solid btn-primary-solid btn-lg mt-6">
+                    <i class="ri-add-line text-inherit"></i>
+                    Add new Campaign
+                </a>
+            </div>
+            <div class="col-span-full md:col-span-5 flex-col items-center justify-center 2xl:block hidden md:flex">
+                <img src="{% static "assets/images/loti/loti-admin-dashboard.svg" %}" alt="online-workshop" class="group-data-[theme-mode=dark]:hidden">
+                <img src="{% static "assets/images/loti/loti-admin-dashboard-dark.svg" %}" alt="online-workshop" class="group-data-[theme-mode=light]:hidden">
+            </div>
+            <!-- Graphicla Elements -->
+            <ul>
+                <li class="absolute -top-[30px] left-1/2 animate-spin-slow">
+                    <img src="{% static "assets/images/element/graphical-element-1.svg" %}" alt="element">
+                </li>
+                <li class="absolute -bottom-[24px] left-1/4 animate-spin-slow">
+                    <img src="{% static "assets/images/element/graphical-element-2.svg" %}" alt="element">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Intro -->
+    <!-- Start Short Progress Card -->
+    <div class="col-span-full sm:col-span-6 lg:col-span-4 card">
+        <div class="flex-center-between">
+            <h6 class="card-title text-lg leading-none">Source Breakdown</h6>
+            <div class="leading-none shrink-0 text-xs text-gray-900 dark:text-dark-text dk-border-one rounded-full px-2 py-1">30 Days</div>
+        </div>
+        <div class="session-browser-chart mt-4">
+            <div id="source-breakdown-chart"></div>
+        </div>
+    </div>
+    <!-- End Short Progress Card -->
+    <!-- Start Average Enrollment Rate Chart -->
+    <div class="col-span-full 2xl:col-span-6 card">
+        <div class="flex-center-between">
+            <h6 class="card-title">Average Conversion rate</h6>
+            <select class="form-input form-select">
+                <option value="this-month">This Month</option>
+                <option value="last-year">Last Year</option>
+                <option value="last-month">Last Month</option>
+                <option value="last-week">Last Week</option>
+            </select>
+        </div>
+        <div id="average-enrollment-chart"></div>              
+    </div>
+    <!-- End Average Enrollment Rate Chart -->
+    <!-- Start Top Performing Course -->
+    <div class="col-span-full 2xl:col-span-6 card">
+        <div class="flex-center-between">
+            <h6 class="card-title">Top performing Ads</h6>
+            <a href="#" class="btn b-solid btn-primary-solid btn-sm">See all</a>
+        </div>
+        <!-- Course Table -->
+        <div class="overflow-x-auto scrollbar-table">
+            <table class="table-auto w-full whitespace-nowrap text-left text-xs text-gray-500 dark:text-dark-text font-semibold leading-none">
+                <thead class="border-b border-dashed border-gray-900/60 dark:border-dark-border-three">
+                    <tr>
+                        <th class="px-3.5 py-4">Course</th>
+                        <th class="px-3.5 py-4">Publish on</th>
+                        <th class="px-3.5 py-4">Impressions</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-dashed divide-gray-900/60 dark:divide-dark-border-three">
+                    <tr>
+                        <td class="flex items-center gap-2 px-3.5 py-4">
+                            <a href="#" class="size-10 rounded-50 overflow-hidden">
+                                <img src="{% static "assets/images/admin/top-course/top-course-1.png" %}" alt="thumb">
+                            </a>
+                            <div>
+                                <h6 class="text-heading font-semibold mb-1.5 line-clamp-1">
+                                    <a href="#">Break free from the past</a>
+                                </h6>
+                            </div>
+                        </td>
+                        <td class="px-3.5 py-4">19 Jan 2025</td>
+                        <td class="px-3.5 py-4">1k</td>
+                    </tr>
+                    <tr>
+                        <td class="flex items-center gap-2 px-3.5 py-4">
+                            <a href="#" class="size-10 rounded-50 overflow-hidden">
+                                <img src="{% static "assets/images/admin/top-course/top-course-2.png" %}" alt="thumb">
+                            </a>
+                            <div>
+                                <h6 class="text-heading font-semibold mb-1.5 line-clamp-1">
+                                    <a href="#">Feeling overwhelmed at work? ...</a>
+                                </h6>
+                            </div>
+                        </td>
+                        <td class="px-3.5 py-4">18 Jan 2025</td>
+                        <td class="px-3.5 py-4">2.5k</td>
+                    </tr>
+                    <tr>
+                        <td class="flex items-center gap-2 px-3.5 py-4">
+                            <a href="#" class="size-10 rounded-50 overflow-hidden">
+                                <img src="{% static "assets/images/admin/top-course/top-course-3.png" %}" alt="thumb">
+                            </a>
+                            <div>
+                                <h6 class="text-heading font-semibold mb-1.5 line-clamp-1">
+                                    <a href="#">Study smarter, not harder—unlock focus..</a>
+                                </h6>
+                            </div>
+                        </td>
+                        <td class="px-3.5 py-4">10 Jan 2025</td>
+                        <td class="px-3.5 py-4">7k</td>
+                    </tr>
+                    <tr>
+                        <td class="flex items-center gap-2 px-3.5 py-4">
+                            <a href="#" class="size-10 rounded-50 overflow-hidden">
+                                <img src="{% static "assets/images/admin/top-course/top-course-4.png" %}" alt="thumb">
+                            </a>
+                            <div>
+                                <h6 class="text-heading font-semibold mb-1.5 line-clamp-1">
+                                    <a href="#">Calm your nerves, boost your confidence...</a>
+                                </h6>
+                            </div>
+                        </td>
+                        <td class="px-3.5 py-4">5 Jan 2025</td>
+                        <td class="px-3.5 py-4">15k</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- End Top Performing Course -->
+    <!-- Start Trending Category -->
+    <div class="col-span-full lg:col-span-6 2xl:col-span-4 card px-0 order-2 2xl:order-none">
+        <div class="flex-center-between px-6 mb-7">
+            <h6 class="card-title">Hot Topics</h6>
+            <div class="leading-none shrink-0 text-xs text-gray-900 dark:text-dark-text dk-border-one rounded-full px-2 py-1">30 Days</div>
+        </div>
+        <div class="max-h-[350px] smooth-scrollbar" data-scrollbar>
+            <ul class="divide-y divide-gray-200 dark:divide-dark-border-three space-y-5 *:pt-5 overflow-x-hidden px-6">
+                <li class="flex-center-between first:pt-0">
+                    <div class="flex items-center gap-2.5">
+                        <div class="size-12 rounded-50 bg-primary-200 dark:bg-dark-icon flex-center flex-shrink-0">
+                            <img src="{% static "assets/images/icons/category/graphic-design.svg" %}" alt="icon">
+                        </div>
+                        <div>
+                            <h6 class="leading-none text-heading font-semibold mb-2 line-clamp-1">
+                                <a href="#" class="truncate">Toxic WorkPlace</a>
+                            </h6>
+                            <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold">110+ Instances</p>
+                        </div>
+                    </div>
+                    <div class="ms-auto mr-5">
+                        <div id="category-one"></div>
+                    </div>
+                    <a href="#" class="flex-center size-6 rounded-md bg-primary-200 dark:bg-dark-icon shrink-0">
+                        <i class="ri-arrow-right-line text-gray-500 dark:text-dark-text text-[14px]"></i>
+                    </a>
+                </li>
+                <li class="flex-center-between first:pt-0">
+                    <div class="flex items-center gap-2.5">
+                        <div class="size-12 rounded-50 bg-primary-200 dark:bg-dark-icon flex-center flex-shrink-0">
+                            <img src="{% static "assets/images/icons/category/ui-ux.svg" %}" alt="icon">
+                        </div>
+                        <div>
+                            <h6 class="leading-none text-heading font-semibold mb-2 line-clamp-1">
+                                    <a href="#" class="truncate">Academics</a>
+                            </h6>
+                            <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold">50+ Instances</p>
+                        </div>
+                    </div>
+                    <div class="ms-auto mr-5">
+                        <div id="category-two"></div>
+                    </div>
+                    <a href="#" class="flex-center size-6 rounded-md bg-primary-200 dark:bg-dark-icon shrink-0">
+                        <i class="ri-arrow-right-line text-gray-500 dark:text-dark-text text-[14px]"></i>
+                    </a>
+                </li>
+                <li class="flex-center-between first:pt-0">
+                    <div class="flex items-center gap-2.5">
+                        <div class="size-12 rounded-50 bg-primary-200 dark:bg-dark-icon flex-center flex-shrink-0">
+                            <img src="{% static "assets/images/icons/category/web-dev.svg" %}" alt="icon">
+                        </div>
+                        <div>
+                            <h6 class="leading-none text-heading font-semibold mb-2 line-clamp-1">
+                                <a href="#" class="truncate">Loneliness</a>
+                            </h6>
+                            <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold">80+ Instances</p>
+                        </div>
+                    </div>
+                    <div class="ms-auto mr-5">
+                        <div id="category-three"></div>
+                    </div>
+                    <a href="#" class="flex-center size-6 rounded-md bg-primary-200 dark:bg-dark-icon shrink-0">
+                        <i class="ri-arrow-right-line text-gray-500 dark:text-dark-text text-[14px]"></i>
+                    </a>
+                </li>
+                <li class="flex-center-between first:pt-0">
+                    <div class="flex items-center gap-2.5">
+                        <div class="size-12 rounded-50 bg-primary-200 dark:bg-dark-icon flex-center flex-shrink-0">
+                            <img src="{% static "assets/images/icons/category/digital-mar.svg" %}" alt="icon">
+                        </div>
+                        <div>
+                            <h6 class="leading-none text-heading font-semibold mb-2 line-clamp-1">
+                                <a href="#" class="truncate">Trauma</a>
+                            </h6>
+                            <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold">40+ Instances</p>
+                        </div>
+                    </div>
+                    <div class="ms-auto mr-5">
+                        <div id="category-four"></div>
+                    </div>
+                    <a href="#" class="flex-center size-6 rounded-md bg-primary-200 dark:bg-dark-icon shrink-0">
+                        <i class="ri-arrow-right-line text-gray-500 dark:text-dark-text text-[14px]"></i>
+                    </a>
+                </li>
+                <li class="flex-center-between first:pt-0">
+                    <div class="flex items-center gap-2.5">
+                        <div class="size-12 rounded-50 bg-primary-200 dark:bg-dark-icon flex-center flex-shrink-0">
+                            <img src="{% static "assets/images/icons/category/bus-dev.svg" %}" alt="icon">
+                        </div>
+                        <div>
+                            <h6 class="leading-none text-heading font-semibold mb-2 line-clamp-1">
+                                <a href="#" class="truncate">Business Dev...</a>
+                            </h6>
+                            <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold">90+ Courses</p>
+                        </div>
+                    </div>
+                    <div class="ms-auto mr-5">
+                        <div id="category-five"></div>
+                    </div>
+                    <a href="#" class="flex-center size-6 rounded-md bg-primary-200 dark:bg-dark-icon shrink-0">
+                        <i class="ri-arrow-right-line text-gray-500 dark:text-dark-text text-[14px]"></i>
+                    </a>
+                </li>
+                <li class="flex-center-between first:pt-0">
+                    <div class="flex items-center gap-2.5">
+                        <div class="size-12 rounded-50 bg-primary-200 dark:bg-dark-icon flex-center flex-shrink-0">
+                            <img src="{% static "assets/images/icons/category/graphic-design.svg" %}" alt="icon">
+                        </div>
+                        <div>
+                            <h6 class="leading-none text-heading font-semibold mb-2 line-clamp-1">
+                                <a href="#" class="truncate">Graphic Design</a>
+                            </h6>
+                            <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold">90+ Courses</p>
+                        </div>
+                    </div>
+                    <div class="ms-auto mr-5">
+                        <div id="category-one"></div>
+                    </div>
+                    <a href="#" class="flex-center size-6 rounded-md bg-primary-200 dark:bg-dark-icon shrink-0">
+                        <i class="ri-arrow-right-line text-gray-500 dark:text-dark-text text-[14px]"></i>
+                    </a>
+                </li>
+                <li class="flex-center-between first:pt-0">
+                    <div class="flex items-center gap-2.5">
+                        <div class="size-12 rounded-50 bg-primary-200 dark:bg-dark-icon flex-center flex-shrink-0">
+                            <img src="{% static "assets/images/icons/category/ui-ux.svg" %}" alt="icon">
+                        </div>
+                        <div>
+                            <h6 class="leading-none text-heading font-semibold mb-2 line-clamp-1">
+                                <a href="#" class="truncate">UI/UX Design</a>
+                            </h6>
+                            <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold">90+ Courses</p>
+                        </div>
+                    </div>
+                    <div class="ms-auto mr-5">
+                        <div id="category-two"></div>
+                    </div>
+                    <a href="#" class="flex-center size-6 rounded-md bg-primary-200 dark:bg-dark-icon shrink-0">
+                        <i class="ri-arrow-right-line text-gray-500 dark:text-dark-text text-[14px]"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Trending Category -->
+    <!-- Start Learn Activity Chart -->
+    <div class="col-span-full 2xl:col-span-5 card">
+        <div class="flex-center-between">
+            <h6 class="card-title">User Demographics</h6>
+            <div class="leading-none shrink-0 text-xs text-gray-900 dark:text-dark-text dk-border-one rounded-full px-2 py-1">30 Days</div>
+        </div>
+        <div id="learn-activity-chart" class="min-h-80"></div>
+    </div>
+    <!-- End Learn Activity Chart -->
+    <!-- Start Support -->
+    <div class="col-span-full lg:col-span-6 2xl:col-span-3 card px-0 order-3 2xl:order-none">
+        <div class="flex-center-between px-6 mb-7">
+            <h6 class="card-title">Competitior Ads</h6>
+            <a href="#" class="btn b-solid btn-primary-solid btn-sm">See all</a>
+        </div>
+        <div class="max-h-[350px] smooth-scrollbar" data-scrollbar>
+            <ul class="divide-y divide-gray-200 dark:divide-dark-border-three space-y-5 *:pt-5 overflow-x-hidden px-6">
+                <li class="flex items-center gap-2.5 first:pt-0">
+                    <a href="#" class="size-12 rounded-50 flex-shrink-0 overflow-hidden">
+                        <img src="{% static "assets/images/user/aurahealth.png" %}" alt="user">
+                    </a>
+                    <div>
+                        <div class="leading-none text-xs text-gray-500 dark:text-dark-text-two mb-1">Today</div>
+                        <h6 class="leading-none text-lg text-heading font-semibold mb-2">
+                            <a href="#">Aura Health</a>
+                        </h6>
+                        <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold line-clamp-1">Duis at consectetur lorem donec massa consectetur lorem donec...</p>
+                    </div>
+                </li>
+                <li class="flex items-center gap-2.5 first:pt-0">
+                    <a href="#" class="size-12 rounded-50 flex-shrink-0 overflow-hidden">
+                        <img src="{% static "assets/images/user/calm.png" %}" alt="user">
+                    </a>
+                    <div>
+                        <div class="leading-none text-xs text-gray-500 dark:text-dark-text-two mb-1">Last Week</div>
+                        <h6 class="leading-none text-lg text-heading font-semibold mb-2">
+                            <a href="#">Calm</a>
+                        </h6>
+                        <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold line-clamp-1">Duis at consectetur lorem donec massa consectetur lorem donec...</p>
+                    </div>
+                </li>
+                <li class="flex items-center gap-2.5 first:pt-0">
+                    <a href="#" class="size-12 rounded-50 flex-shrink-0 overflow-hidden">
+                        <img src="{% static "assets/images/user/headspace.png" %}" alt="user">
+                    </a>
+                    <div>
+                        <div class="leading-none text-xs text-gray-500 dark:text-dark-text-two mb-1">Last Week</div>
+                        <h6 class="leading-none text-lg text-heading font-semibold mb-2">
+                            <a href="#">Headspace</a>
+                        </h6>
+                        <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold line-clamp-1">Duis at consectetur lorem donec massa consectetur lorem donec...</p>
+                    </div>
+                </li>
+                <li class="flex items-center gap-2.5 first:pt-0">
+                    <a href="#" class="size-12 rounded-50 flex-shrink-0 overflow-hidden">
+                        <img src="{% static "assets/images/user/happify.png" %}" alt="user">
+                    </a>
+                    <div>
+                        <div class="leading-none text-xs text-gray-500 dark:text-dark-text-two mb-1">Last Week</div>
+                        <h6 class="leading-none text-lg text-heading font-semibold mb-2">
+                            <a href="#">Happify</a>
+                        </h6>
+                        <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold line-clamp-1">Duis at consectetur lorem donec massa consectetur lorem donec...</p>
+                    </div>
+                </li>
+                <li class="flex items-center gap-2.5 first:pt-0">
+                    <a href="#" class="size-12 rounded-50 flex-shrink-0 overflow-hidden">
+                        <img src="{% static "assets/images/user/noom.png" %}" alt="user">
+                    </a>
+                    <div>
+                        <div class="leading-none text-xs text-gray-500 dark:text-dark-text-two mb-1">10 : 00 pm</div>
+                        <h6 class="leading-none text-lg text-heading font-semibold mb-2">
+                            <a href="#">Noom</a>
+                        </h6>
+                        <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold line-clamp-1">Duis at consectetur lorem donec massa consectetur lorem donec...</p>
+                    </div>
+                </li>
+                <li class="flex items-center gap-2.5 first:pt-0">
+                    <a href="#" class="size-12 rounded-50 flex-shrink-0 overflow-hidden">
+                        <img src="{% static "assets/images/user/balanceapp.png" %}" alt="user">
+                    </a>
+                    <div>
+                        <div class="leading-none text-xs text-gray-500 dark:text-dark-text-two mb-1">10 : 00 pm</div>
+                        <h6 class="leading-none text-lg text-heading font-semibold mb-2">
+                            <a href="#">Balanceapp</a>
+                        </h6>
+                        <p class="leading-none text-xs text-gray-500 dark:text-dark-text-two font-semibold line-clamp-1">Duis at consectetur lorem donec massa consectetur lorem donec...</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Support -->
+</div>
+{% endblock content %}

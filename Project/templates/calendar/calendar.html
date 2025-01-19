@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{%  load static %}
+
+{% block content %}
+
+<div class="card p-0 overflow-hidden">
+    <div class="flex flex-col gap-2 sm:flex-center-between sm:flex-row px-4 py-5 sm:p-7 bg-gray-200/30 dark:bg-dark-card-two">
+        <div>
+            <h6 class="card-title">Calendar</h6>
+        </div>
+        <select class="form-input form-select">
+            <option value="last-week">Last Week</option>
+            <option value="last-two-week">Last Two Week</option>
+            <option value="last-month">Last Month</option>
+            <option value="all">all notification</option>
+        </select>
+    </div>
+    <!-- Start Multimonth Calendar -->
+    <div class="p-4 sm:p-7">
+        <button type="hidden" id="event-button" data-modal-target="event-modal" data-modal-toggle="event-modal"></button>
+        <div id='calendar'></div>
+    </div>
+    <!-- End Multimonth Calendar -->
+</div>
+
+
+{% endblock content %}

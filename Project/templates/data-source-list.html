@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="px-4 pb-4" >
+    <div class="flex flex-col  sm:flex-center-between sm:flex-row px-4 py-5 sm:p-7 bg-gray-200/30 dark:bg-dark-card-two">
+        <div>
+            <h6 class="card-title">Data Sources</h6>
+            <p class="card-description">
+                View and Validate Data
+            </p>
+        </div>
+    </div>
+    <!-- Start Connected App List -->
+    <ul class="py-2.5  *:py-5 divide-y divide-gray-200 dark:divide-dark-border-three">
+        <!-- Loop through domains -->
+        {% for key, value in data.domains.items %}
+        <li class="flex-center-between flex-col sm:flex-row hover:bg-primary-200/50 dark:hover:bg-dark-icon gap-4 sm:gap-[10%]">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <div class="size-10 shrink-0">
+                    <!-- Placeholder for app logo -->
+                    <img src="{% static "assets/images/logo/reddit.png" %}" alt="">
+                </div>
+                <div class="text-center sm:text-left">
+                    <h6 class="leading-none font-semibold text-heading">
+                        {{ key | title }}                    </h6>
+                    <p class="card-description">
+                        {{ value.pain_point }}
+                    </p>
+                </div>
+            </div>
+            <button type="button" class="btn b-outline btn-light-outline group/plug">
+                <span>
+                    <a href="https://www.reddit.com/r/Mindfulness/comments/13ne26l/found_inner_peace_but_there_is_nothing_there/">View Link</a>
+                </span>
+            </button>
+        </li>
+        {% endfor %}
+    </ul>
+            
+   
+
+    <!-- End Connected App List -->
+</div>
+
+
+
+{% endblock content %}

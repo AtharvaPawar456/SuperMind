@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto my-8">
+    <!-- Page Header -->
+    <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-800">Project Details</h1>
+    </div>
+
+    <!-- Project Details Section -->
+    <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Campaign Title:</h2>
+        <p class="text-lg text-gray-600 mb-6">{{ ad_project.campaignTitle }}</p>
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Status:</h3>
+        <p class="text-lg text-gray-600 mb-6">{{ ad_project.status }}</p>
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Raw Test Data:</h3>
+        <p class="text-lg text-gray-600 whitespace-pre-line">{{ ad_project.rawTest }}</p>
+    </div>
+
+    <!-- Metadata Section -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Metadata</h2>
+
+        <!-- Frequent Words -->
+        {% if ad_project.metadata.top_10_frequent_words %}
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Top 10 Frequent Words:</h3>
+            <ul class="list-disc list-inside text-gray-600">
+                {% for word, count in ad_project.metadata.top_10_frequent_words %}
+                <li>{{ word }} ({{ count }})</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- Topics -->
+        {% if ad_project.metadata.top_10_topics %}
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Top 10 Topics:</h3>
+            <ol class="list-decimal list-inside text-gray-600">
+                {% for topic in ad_project.metadata.top_10_topics %}
+                <li>{{ topic }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        {% endif %}
+
+        <!-- Sentiment -->
+        {% if ad_project.metadata.sentiment %}
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Sentiment:</h3>
+            <p class="text-lg text-gray-600">{{ ad_project.metadata.sentiment }}</p>
+        </div>
+        {% endif %}
+
+        <!-- Matched Keywords -->
+        {% if ad_project.metadata.matched_keywords %}
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Matched Keywords:</h3>
+            <p class="text-lg text-gray-600">{{ ad_project.metadata.matched_keywords|join:', ' }}</p>
+        </div>
+        {% endif %}
+
+        <!-- Base64 Image -->
+        {% if ad_project.metadata.word_cloud %}
+        <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Word Cloud:</h3>
+            <img src="data:image/png;base64,{{ ad_project.metadata.word_cloud }}" alt="Word Cloud" class="rounded-lg shadow-md">
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

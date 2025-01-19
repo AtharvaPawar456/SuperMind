@@ -1,0 +1,408 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="grid grid-cols-12 gap-x-4">
+    <!-- Start Dashboard Overview -->
+    <div class="col-span-full card p-3 sm:p-7">
+
+
+
+
+        <!-- Start Dashboard Overview -->
+            <div class="flex-center-between flex-col sm:flex-row items-start sm:items-center gap-3 pb-3 sm:pb-7">
+                <div>
+                    <h6 class="card-title isd">Welcome to Adzoop Dashboard</h6>
+                </div>
+                <div class="flex items-center gap-4">
+                    <select class="form-input form-select form-select-calendar h-[42px]">
+                        <option>Monthly</option>
+                        <option>Weekly</option>
+                        <option>Daily</option>
+                        <option>Yearly</option>
+                    </select>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 gap-4">
+                <!-- Total Courses -->
+                <div class="col-span-full md:col-span-6 2xl:col-span-3 p-[10px_16px] dk-border-one rounded-xl h-full">
+                    <div class="flex-center-between">
+                        <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">All Ads</h6>
+                        <select class="form-input form-select form-select-sm">
+                            <option>Monthly</option>
+                            <option>Weekly</option>
+                            <option>Daily</option>
+                        </select>
+                    </div>
+                    <div class="bg-card-pattern dark:bg-card-pattern-dark bg-no-repeat bg-100% flex-center-between gap-4 mt-10">
+                        <div class="shrink-0">
+                            <div class="card-title text-[32px]">
+                                <div data-value="18040">18,040
+                                </div>
+                            </div>
+                            <div class="leading-none text-gray-500 dark:text-dark-text mt-2">
+                                <span class="text-lg font-semibold text-primary-500">+0.9%</span>
+                                from last month
+                            </div>
+                        </div>
+                        <div class="max-w-[100px]">
+                            <div id="total-course-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Total Mentors -->
+                <div class="col-span-full md:col-span-6 2xl:col-span-3 p-[10px_16px] dk-border-one rounded-xl h-full">
+                    <div class="flex-center-between">
+                        <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">Long Term Ads</h6>
+                        <select class="form-input form-select form-select-sm">
+                            <option>Monthly</option>
+                            <option>Weekly</option>
+                            <option>Daily</option>
+                        </select>
+                    </div>
+                    <div class="bg-card-pattern dark:bg-card-pattern-dark bg-no-repeat bg-100% flex-center-between gap-4 mt-10">
+                        <div class="shrink-0">
+                            <div class="card-title text-[32px]">
+                                <div data-value="13500">13.5k</div>
+                            </div>
+                            <div class="leading-none text-gray-500 dark:text-dark-text mt-2">
+                                <span class="text-lg font-semibold text-danger">-0.3%</span>
+                                from last month
+                            </div>
+                        </div>
+                        <div class="max-w-[100px]">
+                            <div id="total-instructor-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Total Students -->
+                <div class="col-span-full md:col-span-6 2xl:col-span-3 p-[10px_16px] dk-border-one rounded-xl h-full">
+                    <div class="flex-center-between">
+                        <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">Mid Term Ads</h6>
+                        <select class="form-input form-select form-select-sm">
+                            <option>Monthly</option>
+                            <option>Weekly</option>
+                            <option>Daily</option>
+                        </select>
+                    </div>
+                    <div class="bg-card-pattern dark:bg-card-pattern-dark bg-no-repeat bg-100% flex-center-between gap-4 mt-10">
+                        <div class="shrink-0">
+                            <div class="card-title text-[32px]">
+                                <span>3</span>k                                    
+                            </div>
+                            <div class="leading-none text-gray-500 dark:text-dark-text mt-2">
+                                <span class="text-lg font-semibold text-success">+0.5%</span>
+                                from last month
+                            </div>
+                        </div>
+                        <div class="max-w-[100px]">
+                            <div id="total-student-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Total Enroll -->
+                <div class="col-span-full md:col-span-6 2xl:col-span-3 p-[10px_16px] dk-border-one rounded-xl h-full">
+                    <div class="flex-center-between">
+                        <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">Short Term Ads</h6>
+                        <select class="form-input form-select form-select-sm">
+                            <option>Monthly</option>
+                            <option>Weekly</option>
+                            <option>Daily</option>
+                        </select>
+                    </div>
+                    <div class="bg-card-pattern dark:bg-card-pattern-dark bg-no-repeat bg-100% flex-center-between gap-4 mt-10">
+                        <div class="shrink-0">
+                            <div class="card-title text-[32px]">
+                                <span data-value="2.5">2.5</span>k                                    
+                            </div>
+                            <div class="leading-none text-gray-500 dark:text-dark-text mt-2">
+                                <span class="text-lg font-semibold text-primary-500">+0.6%</span>
+                                from last week
+                            </div>
+                        </div>
+                        <div class="max-w-[100px]">
+                            <div id="total-enroll-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      <br>
+        <!-- End Dashboard Overview -->
+
+
+
+        <div class="flex-center-between flex-col sm:flex-row items-start sm:items-center gap-3 pb-3 sm:pb-7">
+            <div>
+                <h6 class="card-title isd">Ad Analytics</h6>
+            </div>
+            <!-- <div class="flex items-center gap-4">
+                <div class="max-w-36">
+                    <input type="date" class="form-input" placeholder="Select date">
+                </div>
+                <div>
+                    <a href="#" class="btn b-solid btn-primary-solid">
+                        Export
+                        <i class="ri-arrow-down-s-line text-inherit"></i>
+                    </a>
+                </div>
+            </div> -->
+        </div>
+        <div class="grid grid-cols-12 gap-4">
+            <div class="col-span-full 2xl:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-1 gap-4">
+                <!-- Conversions One -->
+                <div class="p-[10px_16px] dk-border-one rounded-xl h-full">
+                    <div class="flex-center-between">
+                        <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">Conversions Long Term</h6>
+                        <div class="leading-none shrink-0 text-xs text-gray-900 dark:text-dark-text dk-border-one rounded-full px-2 py-1">30 Days</div>
+                    </div>
+                    <div class="pt-3 bg-card-pattern dark:bg-card-pattern-dark bg-no-repeat bg-100% flex gap-4 mt-3">
+                        <div class="pb-7 shrink-0">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="card-title">
+                                    <span data-value="13500">13,500</span>
+                                </div>
+                                <div class="flex-center text-primary-500 size-5 rounded-50 border border-primary-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6" fill="none">
+                                        <path d="M3.38569 1.43565L5.45455 3.44715L6 2.91683L3 0L0 2.91683L0.545456 3.44715L2.6143 1.43565V6H3.38569V1.43565Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="leading-none text-gray-900 dark:text-dark-text font-semibold">
+                                <span class="text-primary-500">05%</span>
+                                Below Target
+                            </div>
+                        </div>
+                        <div class="grow self-center pb-3">
+                            <div id="conversionOne"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Conversion Two -->
+                <div class="p-[10px_16px] dk-border-one rounded-xl h-full">
+                    <div class="flex-center-between">
+                        <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">Conversions Mid Term</h6>
+                        <div class="leading-none shrink-0 text-xs text-gray-900 dark:text-dark-text dk-border-one rounded-full px-2 py-1">30 Days</div>
+                    </div>
+                    <div class="pt-3 bg-card-pattern dark:bg-card-pattern-dark bg-no-repeat bg-100% flex gap-4 mt-3">
+                        <div class="pb-7 shrink-0">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="card-title" data-value="3000">3000</div>
+                                <div class="flex-center text-danger size-5 rounded-50 border border-danger">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6" fill="none">
+                                        <path d="M3.38569 1.43565L5.45455 3.44715L6 2.91683L3 0L0 2.91683L0.545456 3.44715L2.6143 1.43565V6H3.38569V1.43565Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="leading-none text-gray-900 dark:text-dark-text font-semibold">
+                                <span class="text-danger">25%</span>
+                                Below Target
+                            </div>
+                        </div>
+                        <div class="grow self-center pb-3">
+                            <div id="conversionTwo"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Conversion Three -->
+                <div class="p-[10px_16px] dk-border-one rounded-xl h-full">
+                    <div class="flex-center-between">
+                        <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">Conversions Short Term</h6>
+                        <div class="leading-none shrink-0 text-xs text-gray-900 dark:text-dark-text dk-border-one rounded-full px-2 py-1">30 Days</div>
+                    </div>
+                    <div class="pt-3 bg-card-pattern dark:bg-card-pattern-dark bg-no-repeat bg-100% flex gap-4 mt-3">
+                        <div class="pb-7 shrink-0">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="card-title" data-value="2500">2,500</div>
+                                <div class="flex-center text-primary-500 size-5 rounded-50 border border-primary-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6" fill="none">
+                                        <path d="M3.38569 1.43565L5.45455 3.44715L6 2.91683L3 0L0 2.91683L0.545456 3.44715L2.6143 1.43565V6H3.38569V1.43565Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="leading-none text-gray-900 dark:text-dark-text font-semibold">
+                                <span class="text-primary-500">50%</span>
+                                Below Target
+                            </div>
+                        </div>
+                        <div class="grow self-center pb-3">
+                            <div id="conversionThree"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start Analytic Overview Chart -->
+            <div class="col-span-full 2xl:col-span-9 card dk-border-one p-3 sm:px-5 mb-0">
+                <div class="flex-center-between">
+                    <h6 class="card-title">Audience Reached</h6>
+                    <select class="form-input form-select">
+                        <option value="this-week">This Week</option>
+                        <option value="this-month">This Month</option>
+                        <option value="this-year">This Year</option>
+                        <option value="today">Today</option>
+                    </select>
+                </div>
+                <div class="analytic-chart mt-4">
+                    <div id="analytic-overview-chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Dashboard Overview -->
+
+    <div class="col-span-full grid grid-cols-13 gap-x-4">
+        <!-- Start Active User Chart -->
+        <div class="col-span-full lg:col-span-5 card">
+             <!-- Start Social Media Traffic Table -->
+        <div class="flex-center-between">
+            <h6 class="card-title text-lg leading-none">Social media traffic</h6>
+            <div class="relative">
+                <button data-popover-target="smtMore" data-popover-trigger="click" data-popover-placement="bottom-end" type="button" class="size-6 flex-center rounded-md hover:bg-gray-200 dark:hover:bg-dark-icon focus:bg-gray-200 dark:focus:bg-dark-icon">
+                    <i class="ri-more-fill text-gray-500 dark:text-dark-text text-lg"></i>
+                </button>
+                <ul id="smtMore" class="popover-target invisible" data-popover role="tooltip">
+                    <li>
+                        <a class="popover-item" href="#">More one</a>
+                    </li>
+                    <li>
+                        <a class="popover-item" href="#">More two</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="flex-center-between py-3">
+                <div class="text-sm font-semibold text-gray-900 dark:text-dark-text">Network</div>
+                <div class="text-sm font-semibold text-gray-900 dark:text-dark-text">Visit</div>
+            </div>
+            <ul class="flex flex-col gap-3 text-sm leading-none text-gray-500 dark:text-dark-text font-medium *:flex-center-between *:border *:border-gray-200 dark:*:border-dark-border *:rounded-lg *:px-1 *:py-1.5">
+                <li>
+                    <div class="flex items-center gap-2">
+                        <div class="flex-center size-8 rounded-md shadow-md">
+                            <i class="ri-facebook-circle-line text-gray-900 dark:text-dark-text"></i>
+                        </div>
+                        <div>Facebook</div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="relative w-24 2xl:w-32 h-1.5 rounded-full bg-progress-bar-bg dark:bg-progress-bar-bg-dark overflow-hidden">
+                            <div class="absolute top-0 left-0 bottom-0 bg-progress-bar rounded-full w-[85%]"></div>
+                        </div>
+                        <div class="pr-3">85k</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center gap-2">
+                        <div class="flex-center size-8 rounded-md shadow-md">
+                            <i class="ri-twitter-x-line text-gray-900 dark:text-dark-text"></i>
+                        </div>
+                        <div>Twitter</div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="relative w-24 2xl:w-32 h-1.5 rounded-full bg-progress-bar-bg dark:bg-progress-bar-bg-dark overflow-hidden">
+                            <div class="absolute top-0 left-0 bottom-0 bg-progress-bar rounded-full w-[20%]"></div>
+                        </div>
+                        <div class="pr-3">20k</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center gap-2">
+                        <div class="flex-center size-8 rounded-md shadow-md">
+                            <i class="ri-instagram-line text-gray-900 dark:text-dark-text"></i>
+                        </div>
+                        <div>Instagram</div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="relative w-24 2xl:w-32 h-1.5 rounded-full bg-progress-bar-bg dark:bg-progress-bar-bg-dark overflow-hidden">
+                            <div class="absolute top-0 left-0 bottom-0 bg-progress-bar rounded-full w-[45%]"></div>
+                        </div>
+                        <div class="pr-3">45k</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center gap-2">
+                        <div class="flex-center size-8 rounded-md shadow-md">
+                            <i class="ri-linkedin-box-line text-gray-900 dark:text-dark-text"></i>
+                        </div>
+                        <div>LinkedIn</div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="relative w-24 2xl:w-32 h-1.5 rounded-full bg-progress-bar-bg dark:bg-progress-bar-bg-dark overflow-hidden">
+                            <div class="absolute top-0 left-0 bottom-0 bg-progress-bar rounded-full w-[35%]"></div>
+                        </div>
+                        <div class="pr-3">35k</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center gap-2">
+                        <div class="flex-center size-8 rounded-md shadow-md">
+                            <i class="ri-pinterest-line text-gray-900 dark:text-dark-text"></i>
+                        </div>
+                        <div>Pinterest</div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="relative w-24 2xl:w-32 h-1.5 rounded-full bg-progress-bar-bg dark:bg-progress-bar-bg-dark overflow-hidden">
+                            <div class="absolute top-0 left-0 bottom-0 bg-progress-bar rounded-full w-[90%]"></div>
+                        </div>
+                        <div class="pr-3">90k</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+   
+    <!-- End Social Media Traffic Table -->
+        </div>
+        <!-- End Active User Chart -->
+
+        <!-- Start Session By Browser Chart -->
+        <div class="col-span-full sm:col-span-6 lg:col-span-4 card">
+            <div class="flex-center-between">
+                <h6 class="card-title text-lg leading-none">Sessions by browser</h6>
+                <div class="leading-none shrink-0 text-xs text-gray-900 dark:text-dark-text dk-border-one rounded-full px-2 py-1">30 Days</div>
+            </div>
+            <div class="session-browser-chart mt-4">
+                <div id="browser-session-chart"></div>
+            </div>
+        </div>
+        <!-- End Session By Browser Chart -->
+
+        <!-- Start User By Country Chart -->
+        <div class="col-span-full sm:col-span-7 lg:col-span-4 card relative">
+            <div class="flex-center-between">
+                <h6 class="card-title text-lg leading-none">Users by country</h6>
+                <div class="leading-none shrink-0 text-xs text-gray-900 dark:text-dark-text dk-border-one rounded-full px-2 py-1">30 Days</div>
+            </div>
+            <div id="customer-country-chart" class="w-full max-h-[370px] mt-4">
+                <ul class="absolute left-6 bottom-6 space-y-2">
+                    <li class="flex items-center text-xs leading-none gap-1.5">
+                        <img src="{% static "assets/images/flag/ind.svg" %}" alt="flag" class="size-4 rounded-sm">
+                        <span class="text-gray-500 dark:text-dark-text font-medium">India</span>
+                    </li>
+                    <li class="flex items-center text-xs leading-none gap-1.5">
+                        <img src="{% static "assets/images/flag/us.svg" %}" alt="flag" class="size-4 rounded-sm">
+                        <span class="text-gray-500 dark:text-dark-text font-medium">United State</span>
+                    </li>
+                    <li class="flex items-center text-xs leading-none gap-1.5">
+                        <img src="{% static "assets/images/flag/fr.svg" %}" alt="flag" class="size-4 rounded-sm">
+                        <span class="text-gray-500 dark:text-dark-text font-medium">France</span>
+                    </li>
+                    <li class="flex items-center text-xs leading-none gap-1.5">
+                        <img src="{% static "assets/images/flag/es.svg" %}" alt="flag" class="size-4 rounded-sm">
+                        <span class="text-gray-500 dark:text-dark-text font-medium">Russia</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- End User By Country Chart -->
+    </div>
+
+    
+
+   
+
+    
+</div>
+
+{% endblock content %}
