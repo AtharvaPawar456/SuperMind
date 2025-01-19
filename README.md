@@ -4,6 +4,8 @@
 
 **Team Name:** GTA  
 **Project Name:** Adzooop 
+**Project Demo Live Link:** [Adzooop](https://doberman-natural-lioness.ngrok-free.app) 
+
 
 ## 📌 Project Overview
 **Adzooop** is an innovative solution developed during the **Super Mind Hackathon** by Team **GTA** to automate research and analysis for creating user-centric, high-performing advertisements. 
@@ -59,7 +61,7 @@ To develop an automated system that:
 - Taglines Generation: ✅  
 - Database Management: ✅  
 
-### **Emmuel**  
+### **Emmumnael**  
 - Project Main Integration & Development.  
 - Structuring the Project Framework.  
 - UI/UX Development.  
@@ -71,7 +73,7 @@ To develop an automated system that:
 - Insights & Analysis.  
 - API Development.  
 
-### **Janci**  
+### **Janice**  
 - Competitive Ads Analysis.  
 - In-depth Research on SuperMind.  
 - PPT and Documentation Preparation.  
@@ -136,6 +138,6 @@ To develop an automated system that:
 ## 🤖 Author
 [AtharvaPawar456](https://github.com/AtharvaPawar456)  
 
-Team Members: **Atharva Pawar, Shaun Pimenta, Emmuel, Janci**  
+Team Members: **Atharva Pawar, Shaun Pimenta, Emmumnael, Janice**  
 Hackathon: **Super Mind Hackathon**  
 Team Name: **GTA**

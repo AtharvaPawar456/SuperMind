@@ -224,15 +224,19 @@ def usercentric_detail(request: HttpRequest, adprojid: int):
     ad_project = get_object_or_404(AdProjects, adprojid=adprojid)
     
     # Convert the rawTest string to JSON
-    try:
-        metadata = json.loads(ad_project.rawTest)
-    except json.JSONDecodeError as e:
-        metadata = {}  # Handle JSON errors gracefully
+    # try:
+    #     metadata = json.loads(ad_project.rawTest)
+    # except json.JSONDecodeError as e:
+    #     metadata = {}  # Handle JSON errors gracefully
 
     # Add metadata to the ad_project object for easy access
-    ad_project.metadata = metadata
+    # ad_project.metadata = metadata
+    
+    # metadata_dict = json.loads(metadata)
+
 
     # Render the page with the specific AdProjects record and metadata
+    # return render(request, "usercentric_detail.html", {'ad_project': ad_project, "metadata_dict":metadata_dict})
     return render(request, "usercentric_detail.html", {'ad_project': ad_project})
 
 
