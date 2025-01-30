@@ -48,6 +48,8 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ngrok http 8000 --domain doberman-natural-lioness.ngrok-free.app
 
 
+ngrok.exe http 8000
+
 import time
 start_time = time.time()
 ...body
